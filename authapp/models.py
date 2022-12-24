@@ -4,10 +4,16 @@ from django.contrib.auth.validators import ASCIIUsernameValidator
 from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from uuid import uuid4
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username_validator = ASCIIUsernameValidator()
+
+    id = models.UUIDField(
+        default=uuid4,
+        primary_key=True,
+    )
 
     username = models.CharField(
         _("username"),
