@@ -19,7 +19,7 @@ from rest_framework.routers import DefaultRouter
 from authapp.views import CustomUserModelViewSet
 
 router = DefaultRouter()
-router.register('user', CustomUserModelViewSet)
+router.register('users', CustomUserModelViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
