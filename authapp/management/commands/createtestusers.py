@@ -1,4 +1,5 @@
 from django.core.management.base import BaseCommand
+from django.utils.crypto import get_random_string
 from authapp.models import CustomUser
 
 
@@ -11,4 +12,6 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         total = kwargs['total']
         for i in range(total):
-            CustomUser.objects.create_user(username=f'user{i}', email=f'user{i}@mail.ru', password=f'user{i}')
+            CustomUser.objects.create_user(username=get_random_string(10), first_name=f'user{i}_{get_random_string(5)}',
+                                           last_name=f'user{i}_{get_random_string(5)}', email=f'user{i}@mail.ru',
+                                           password=f'user{i}')
