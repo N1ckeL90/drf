@@ -1,7 +1,5 @@
-from rest_framework import status
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.pagination import LimitOffsetPagination
-from rest_framework.response import Response
 from .models import Project, Todo
 from .serializers import ProjectModelSerializer, TodoModelSerializer
 from .filters import ProjectFilter, ToDoFilter
