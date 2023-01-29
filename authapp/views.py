@@ -3,7 +3,10 @@ from .models import CustomUser
 from .serializers import CustomUserModelSerializer
 
 
-class CustomUserViewSet(mixins.ListModelMixin, mixins.UpdateModelMixin, mixins.RetrieveModelMixin,
+class CustomUserViewSet(mixins.CreateModelMixin,
+                        mixins.ListModelMixin,
+                        mixins.UpdateModelMixin,
+                        mixins.RetrieveModelMixin,
                         viewsets.GenericViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserModelSerializer
