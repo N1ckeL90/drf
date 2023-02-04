@@ -11,3 +11,16 @@ class CustomUserModelSerializer(HyperlinkedModelSerializer):
             'last_name',
             'email',
         )
+
+
+class CustomUserModelSerializerFull(HyperlinkedModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'is_superuser',
+            'is_staff',
+        )
