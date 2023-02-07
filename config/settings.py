@@ -37,13 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_yasg',
-    'corsheaders',
     'rest_framework',
+    'corsheaders',
+    'rest_framework.authtoken',
     'django_filters',
+    'drf_yasg',
+    'graphene_django',
     'authapp',
     'todoapp',
-    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -162,4 +163,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
+}
+
+GRAPHENE = {
+    'SCHEMA': 'config.schema.schema'
 }
