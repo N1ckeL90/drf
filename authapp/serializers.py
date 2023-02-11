@@ -1,8 +1,8 @@
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework.serializers import ModelSerializer
 from .models import CustomUser
 
 
-class CustomUserModelSerializer(HyperlinkedModelSerializer):
+class CustomUserModelSerializer(ModelSerializer):
     class Meta:
         model = CustomUser
         fields = (
@@ -13,7 +13,7 @@ class CustomUserModelSerializer(HyperlinkedModelSerializer):
         )
 
 
-class CustomUserModelSerializerFull(HyperlinkedModelSerializer):
+class CustomUserModelSerializerFull(ModelSerializer):
     class Meta:
         model = CustomUser
         fields = (
