@@ -10,10 +10,10 @@ from uuid import uuid4
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username_validator = ASCIIUsernameValidator()
 
-    id = models.UUIDField(
-        default=uuid4,
-        primary_key=True,
-    )
+    # id = models.UUIDField(
+    #     default=uuid4,
+    #     primary_key=True,
+    # )
 
     username = models.CharField(
         _("username"),

@@ -12,6 +12,8 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         total = kwargs['total']
         for i in range(total):
-            CustomUser.objects.create_user(username=get_random_string(10), first_name=f'user{i}_{get_random_string(5)}',
-                                           last_name=f'user{i}_{get_random_string(5)}', email=f'user{i}@mail.ru',
+            CustomUser.objects.create_user(username=get_random_string(10),
+                                           first_name=f'user{i}_{get_random_string(5)}',
+                                           last_name=f'user{i}_{get_random_string(5)}',
+                                           email=f'user{get_random_string(5)}@mail.ru',
                                            password=f'user{i}')
